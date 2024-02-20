@@ -19,7 +19,7 @@ namespace OnionArchitecture.Persistence.Configurations
             };
             Category category2 = new()
             {
-                Id = 1,
+                Id = 2,
                 Name = "Moda",
                 Priorty = 2,
                 ParentId = 0,

@@ -21,7 +21,7 @@ namespace OnionArchitecture.Persistence.Configurations
             };
             Detail detail2 = new()
             {
-                Id = 1,
+                Id = 2,
                 Title = faker.Lorem.Sentence(2),
                 Description = faker.Lorem.Sentence(5),
                 CategoryId = 3,
@@ -30,7 +30,7 @@ namespace OnionArchitecture.Persistence.Configurations
             };
             Detail detail3 = new()
             {
-                Id = 1,
+                Id = 3,
                 Title = faker.Lorem.Sentence(1),
                 Description = faker.Lorem.Sentence(5),
                 CategoryId = 4,
