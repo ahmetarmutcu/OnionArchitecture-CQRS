@@ -2,8 +2,8 @@
 {
     public class EntityBase:IEntityBase
     {
-        public required int Id { get; set; }
-        public required DateTime CreatedDateTime { get; set; } = DateTime.Now;
-        public required  bool IsDeleted=false;
+        public int Id { get; set; }
+        public DateTime CreatedDateTime { get; set; } = DateTime.Now;
+        public bool IsDeleted=false;
     }
 }
