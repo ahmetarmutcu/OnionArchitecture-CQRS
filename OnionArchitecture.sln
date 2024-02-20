@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnionArchitecture.Api", "Pr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnionArchitecture.Persistence", "Infrastructure\OnionArchitecture.Persistence\OnionArchitecture.Persistence.csproj", "{D5422EBF-94C6-4131-8490-D44B9D4B8CA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionArchitecture.Mapper", "OnionArchitecture.Mapper\OnionArchitecture.Mapper.csproj", "{A314930E-95A9-42FC-B794-F61FDE02D4AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{D5422EBF-94C6-4131-8490-D44B9D4B8CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5422EBF-94C6-4131-8490-D44B9D4B8CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5422EBF-94C6-4131-8490-D44B9D4B8CA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A314930E-95A9-42FC-B794-F61FDE02D4AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A314930E-95A9-42FC-B794-F61FDE02D4AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A314930E-95A9-42FC-B794-F61FDE02D4AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A314930E-95A9-42FC-B794-F61FDE02D4AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{D906B9D6-CFDA-483B-93CD-A700D3AB5977} = {7FBFA4DB-F797-48F6-8B04-F079E87D66A5}
 		{DF985558-F05A-4B94-B6B8-B8D008D5C53C} = {05649436-6B88-4B33-B262-A5F4FBEE5506}
 		{D5422EBF-94C6-4131-8490-D44B9D4B8CA3} = {7FBFA4DB-F797-48F6-8B04-F079E87D66A5}
+		{A314930E-95A9-42FC-B794-F61FDE02D4AF} = {3F0B37E2-90BD-40B3-9E82-B0372F72F91E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CDFD998D-570D-4847-93EC-455B2E4C173E}

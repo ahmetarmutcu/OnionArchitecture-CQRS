@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -17,10 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure\OnionArchitecture.Persistence\OnionArchitecture.Persistence.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\OnionArchitecture.Mapper\OnionArchitecture.Mapper.csproj" />
   </ItemGroup>
 
 </Project>
