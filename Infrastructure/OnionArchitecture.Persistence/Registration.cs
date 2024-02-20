@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using OnionArchitecture.Application.Interfaces.Repositories;
 using OnionArchitecture.Persistence.Context;
 using System.Reflection.Emit;
 
@@ -12,6 +13,8 @@ namespace OnionArchitecture.Persistence
         {
             services.AddDbContext<AppDbContext>(opt => 
             opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")).EnableSensitiveDataLogging());
+
+            services.AddScoped(typeof(IReadRepository<>), typeof(IReadRepository<>));
         }
     }
 }
