@@ -22,21 +22,6 @@ namespace OnionArchitecture.Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CategoryProduct", b =>
-                {
-                    b.Property<int>("CategoriesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CategoriesId", "ProductsId");
-
-                    b.HasIndex("ProductsId");
-
-                    b.ToTable("CategoryProduct");
-                });
-
             modelBuilder.Entity("OnionArchitecture.Domain.Entites.Brand", b =>
                 {
                     b.Property<int>("Id")
@@ -47,6 +32,9 @@ namespace OnionArchitecture.Persistence.Migrations
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -61,20 +49,23 @@ namespace OnionArchitecture.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDateTime = new DateTime(2024, 2, 20, 15, 45, 21, 516, DateTimeKind.Local).AddTicks(3227),
-                            Name = "Sports"
+                            CreatedDateTime = new DateTime(2024, 2, 21, 21, 5, 51, 786, DateTimeKind.Local).AddTicks(613),
+                            IsDeleted = false,
+                            Name = "Toys & Automotive"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDateTime = new DateTime(2024, 2, 20, 15, 45, 21, 516, DateTimeKind.Local).AddTicks(3235),
-                            Name = "Clothing"
+                            CreatedDateTime = new DateTime(2024, 2, 21, 21, 5, 51, 786, DateTimeKind.Local).AddTicks(620),
+                            IsDeleted = false,
+                            Name = "Jewelery"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDateTime = new DateTime(2024, 2, 20, 15, 45, 21, 516, DateTimeKind.Local).AddTicks(3286),
-                            Name = "Computers, Garden & Toys"
+                            CreatedDateTime = new DateTime(2024, 2, 21, 21, 5, 51, 786, DateTimeKind.Local).AddTicks(635),
+                            IsDeleted = true,
+                            Name = "Movies & Clothing"
                         });
                 });
 
@@ -88,6 +79,9 @@ namespace OnionArchitecture.Persistence.Migrations
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -107,7 +101,8 @@ namespace OnionArchitecture.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDateTime = new DateTime(2024, 2, 20, 15, 45, 21, 516, DateTimeKind.Local).AddTicks(5911),
+                            CreatedDateTime = new DateTime(2024, 2, 21, 21, 5, 51, 786, DateTimeKind.Local).AddTicks(2594),
+                            IsDeleted = false,
                             Name = "Elektrik",
                             ParentId = 0,
                             Priorty = 1
@@ -115,7 +110,8 @@ namespace OnionArchitecture.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDateTime = new DateTime(2024, 2, 20, 15, 45, 21, 516, DateTimeKind.Local).AddTicks(5912),
+                            CreatedDateTime = new DateTime(2024, 2, 21, 21, 5, 51, 786, DateTimeKind.Local).AddTicks(2596),
+                            IsDeleted = false,
                             Name = "Moda",
                             ParentId = 0,
                             Priorty = 2
@@ -123,7 +119,8 @@ namespace OnionArchitecture.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDateTime = new DateTime(2024, 2, 20, 15, 45, 21, 516, DateTimeKind.Local).AddTicks(5914),
+                            CreatedDateTime = new DateTime(2024, 2, 21, 21, 5, 51, 786, DateTimeKind.Local).AddTicks(2598),
+                            IsDeleted = false,
                             Name = "Bilgisayar",
                             ParentId = 1,
                             Priorty = 1
@@ -131,7 +128,8 @@ namespace OnionArchitecture.Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDateTime = new DateTime(2024, 2, 20, 15, 45, 21, 516, DateTimeKind.Local).AddTicks(5915),
+                            CreatedDateTime = new DateTime(2024, 2, 21, 21, 5, 51, 786, DateTimeKind.Local).AddTicks(2599),
+                            IsDeleted = false,
                             Name = "Kadın",
                             ParentId = 2,
                             Priorty = 1
@@ -156,6 +154,9 @@ namespace OnionArchitecture.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -171,25 +172,28 @@ namespace OnionArchitecture.Persistence.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDateTime = new DateTime(2024, 2, 20, 15, 45, 21, 518, DateTimeKind.Local).AddTicks(3030),
-                            Description = "Doloremque çarpan umut ötekinden nostrum.",
-                            Title = "Sokaklarda."
+                            CreatedDateTime = new DateTime(2024, 2, 21, 21, 5, 51, 787, DateTimeKind.Local).AddTicks(8715),
+                            Description = "Fugit sunt illo sandalye yazın.",
+                            IsDeleted = false,
+                            Title = "Ducimus."
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 3,
-                            CreatedDateTime = new DateTime(2024, 2, 20, 15, 45, 21, 518, DateTimeKind.Local).AddTicks(3066),
-                            Description = "Çıktılar et incidunt aut tempora.",
-                            Title = "Karşıdakine domates."
+                            CreatedDateTime = new DateTime(2024, 2, 21, 21, 5, 51, 787, DateTimeKind.Local).AddTicks(8755),
+                            Description = "Doloremque mi veritatis ut camisi.",
+                            IsDeleted = true,
+                            Title = "Bundan lambadaki."
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 4,
-                            CreatedDateTime = new DateTime(2024, 2, 20, 15, 45, 21, 518, DateTimeKind.Local).AddTicks(3097),
-                            Description = "Çünkü reprehenderit perferendis aliquam kulu.",
-                            Title = "Quasi."
+                            CreatedDateTime = new DateTime(2024, 2, 21, 21, 5, 51, 787, DateTimeKind.Local).AddTicks(8783),
+                            Description = "Vitae sandalye eaque illo için.",
+                            IsDeleted = false,
+                            Title = "Ipsa."
                         });
                 });
 
@@ -214,6 +218,9 @@ namespace OnionArchitecture.Persistence.Migrations
                     b.Property<decimal>("Discount")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -232,37 +239,39 @@ namespace OnionArchitecture.Persistence.Migrations
                         {
                             Id = 1,
                             BrandId = 1,
-                            CreatedDateTime = new DateTime(2024, 2, 20, 15, 45, 21, 520, DateTimeKind.Local).AddTicks(4897),
-                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-                            Discount = 4.961950698502630m,
-                            Price = 691.03m,
-                            Title = "Gorgeous Rubber Fish"
+                            CreatedDateTime = new DateTime(2024, 2, 21, 21, 5, 51, 790, DateTimeKind.Local).AddTicks(9545),
+                            Description = "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+                            Discount = 7.16267932412850m,
+                            IsDeleted = true,
+                            Price = 552.95m,
+                            Title = "Ergonomic Concrete Car"
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 3,
-                            CreatedDateTime = new DateTime(2024, 2, 20, 15, 45, 21, 520, DateTimeKind.Local).AddTicks(4927),
-                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-                            Discount = 6.556671728501220m,
-                            Price = 71.59m,
-                            Title = "Small Cotton Chicken"
+                            CreatedDateTime = new DateTime(2024, 2, 21, 21, 5, 51, 790, DateTimeKind.Local).AddTicks(9572),
+                            Description = "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+                            Discount = 5.52580587745620m,
+                            IsDeleted = true,
+                            Price = 233.44m,
+                            Title = "Ergonomic Soft Bacon"
                         });
                 });
 
-            modelBuilder.Entity("CategoryProduct", b =>
+            modelBuilder.Entity("OnionArchitecture.Domain.Entites.ProductCategory", b =>
                 {
-                    b.HasOne("OnionArchitecture.Domain.Entites.Category", null)
-                        .WithMany()
-                        .HasForeignKey("CategoriesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
 
-                    b.HasOne("OnionArchitecture.Domain.Entites.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProductId", "CategoryId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("ProductCategories");
                 });
 
             modelBuilder.Entity("OnionArchitecture.Domain.Entites.Detail", b =>
@@ -287,9 +296,35 @@ namespace OnionArchitecture.Persistence.Migrations
                     b.Navigation("Brand");
                 });
 
+            modelBuilder.Entity("OnionArchitecture.Domain.Entites.ProductCategory", b =>
+                {
+                    b.HasOne("OnionArchitecture.Domain.Entites.Category", "Category")
+                        .WithMany("ProductCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OnionArchitecture.Domain.Entites.Product", "Product")
+                        .WithMany("ProductCategories")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("OnionArchitecture.Domain.Entites.Category", b =>
                 {
                     b.Navigation("Details");
+
+                    b.Navigation("ProductCategories");
+                });
+
+            modelBuilder.Entity("OnionArchitecture.Domain.Entites.Product", b =>
+                {
+                    b.Navigation("ProductCategories");
                 });
 #pragma warning restore 612, 618
         }

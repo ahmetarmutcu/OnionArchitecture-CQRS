@@ -35,5 +35,10 @@ namespace OnionArchitecture.Persistence.Repositories
         {
             await Task.Run(() => Table.Remove(entity));
         }
+
+        public async Task HardDeleteRangeAsync(IList<T> entity)
+        {
+            await Task.Run(() => Table.RemoveRange(entity));
+        }
     }
 }

@@ -46,10 +46,13 @@ namespace OnionArchitecture.Persistence.Repositories
             IQueryable<T> queryable = Table;
             if (!enableTracking) queryable = queryable.AsNoTracking();
             if (include is not null) queryable = include(queryable);
-            
-            //queryable = queryable.Where(predicate);
 
-            return await queryable.FirstOrDefaultAsync(predicate);
+            if (predicate != null)
+            {
+                queryable = queryable.Where(predicate);
+            }
+
+            return await queryable.FirstOrDefaultAsync();
         }
 
         public  IQueryable<T> Find(Expression<Func<T, bool>> predicate,bool enableTracking=false)

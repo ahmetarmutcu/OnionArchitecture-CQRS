@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public DateTime CreatedDateTime { get; set; } = DateTime.Now;
-        public bool IsDeleted=false;
+
+        public bool IsDeleted { get; set; }
     }
 }
