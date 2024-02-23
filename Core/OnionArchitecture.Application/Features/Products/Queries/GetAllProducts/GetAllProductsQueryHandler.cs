@@ -26,8 +26,7 @@ namespace OnionArchitecture.Application.Features.Products.Queries.GetAllProducts
             var map= _mapper.Map<GetAllProductsQueryResponse, Product>(products);
             foreach (var item in map)
                 item.Price -= (item.Price * item.Discount / 100);
-            //return map;
-            throw new Exception("Hata mesajı");
+            return map;
         }
     }
 }

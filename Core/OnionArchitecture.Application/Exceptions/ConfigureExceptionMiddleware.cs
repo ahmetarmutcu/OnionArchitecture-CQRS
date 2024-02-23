@@ -7,8 +7,6 @@ namespace OnionArchitecture.Application.Exceptions
     {
         public static void ConfigureExceptionHandlingMiddleware(this IApplicationBuilder app)
         {
-          
-
             app.UseMiddleware<ExceptionMiddleware>();
         }
     }

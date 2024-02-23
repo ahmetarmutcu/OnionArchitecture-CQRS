@@ -1,5 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using FluentValidation.Resources;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
+using OnionArchitecture.Application.Beheviors;
 using OnionArchitecture.Application.Exceptions;
+using System.Globalization;
 using System.Reflection;
 
 namespace OnionArchitecture.Application
@@ -13,6 +18,11 @@ namespace OnionArchitecture.Application
             services.AddTransient<ExceptionMiddleware>();
 
             services.AddMediatR(cfg=>cfg.RegisterServicesFromAssembly(assembly));
+
+            services.AddValidatorsFromAssembly(assembly);
+            ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("tr");
+
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehevior<,>));
         }
     }
 }
