@@ -3,6 +3,7 @@ using OnionArchitecture.Application;
 using OnionArchitecture.Mapper;
 using OnionArchitecture.Application.Exceptions;
 using OnionArchitecture.Infrastructure;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,33 @@ builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
+
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "OnionArchitecture API", Version = "v1", Description = "OnionArchitecture swagger client." });
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+    {
+        Name="Authorization",
+        Type=SecuritySchemeType.ApiKey,
+        Scheme="Bearer",
+        BearerFormat="JWT",
+        In=ParameterLocation.Header,
+        Description= "'Bearer' yazýp boþluk býraktýktan sonra Token'ý girebilirsiniz \r\n\r\n Örneðin \"Bearer e#xc41_rv_is#-perf_wx$$rg%qrpcih%48@&-j*e6x5na)u+i\""
+    });
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement() {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference=new OpenApiReference
+                {
+                    Type=ReferenceType.SecurityScheme,
+                    Id="Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
 
 var app = builder.Build();
 
