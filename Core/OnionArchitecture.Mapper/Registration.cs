@@ -1,7 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using OnionArchitecture.Application.Interfaces.AutoMapper;
-using System.Reflection;
-
 namespace OnionArchitecture.Mapper
 {
     public static class Registration

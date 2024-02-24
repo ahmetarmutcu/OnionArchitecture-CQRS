@@ -2,6 +2,7 @@ using OnionArchitecture.Persistence;
 using OnionArchitecture.Application;
 using OnionArchitecture.Mapper;
 using OnionArchitecture.Application.Exceptions;
+using OnionArchitecture.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,7 @@ builder.Configuration
     .AddJsonFile($"appsettings.{env.EnvironmentName}.json",optional:true);
 
 builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
 

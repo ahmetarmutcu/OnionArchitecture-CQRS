@@ -16,8 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\OnionArchitecture.Mapper\OnionArchitecture.Mapper.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\OnionArchitecture.Infrastructure\OnionArchitecture.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\OnionArchitecture.Persistence\OnionArchitecture.Persistence.csproj" />
-    <ProjectReference Include="..\..\OnionArchitecture.Mapper\OnionArchitecture.Mapper.csproj" />
   </ItemGroup>
 
 </Project>
