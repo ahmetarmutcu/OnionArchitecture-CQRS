@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using OnionArchitecture.Application.Features.Auth.Command.Login;
+using OnionArchitecture.Application.Features.Auth.Command.RefreshToken;
 using OnionArchitecture.Application.Features.Auth.Command.Register;
 
 namespace OnionArchitecture.Api.Controllers
@@ -27,6 +28,13 @@ namespace OnionArchitecture.Api.Controllers
         {
             var response=await _mediator.Send(request);
             return StatusCode(StatusCodes.Status200OK,response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RefreshToken(RefreshTokenCommandRequest request)
+        {
+            var response = await _mediator.Send(request);
+            return StatusCode(StatusCodes.Status200OK, response);
         }
     }
 }
