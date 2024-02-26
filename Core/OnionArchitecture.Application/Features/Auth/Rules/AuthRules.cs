@@ -23,5 +23,11 @@ namespace OnionArchitecture.Application.Features.Auth.Rules
 
             return Task.CompletedTask;
         }
+        public Task EmaillAddressShouldBeValid(User? user)
+        {
+            if (user is null) throw new EmaillAddressShouldBeValidException();
+
+            return Task.CompletedTask;
+        }
     }
 }

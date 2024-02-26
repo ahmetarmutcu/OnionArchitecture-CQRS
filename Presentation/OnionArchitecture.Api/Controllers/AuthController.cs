@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using OnionArchitecture.Application.Features.Auth.Command.Login;
 using OnionArchitecture.Application.Features.Auth.Command.RefreshToken;
 using OnionArchitecture.Application.Features.Auth.Command.Register;
+using OnionArchitecture.Application.Features.Auth.Command.Revoke;
+using OnionArchitecture.Application.Features.Auth.Command.RevokeAll;
 
 namespace OnionArchitecture.Api.Controllers
 {
@@ -35,6 +37,20 @@ namespace OnionArchitecture.Api.Controllers
         {
             var response = await _mediator.Send(request);
             return StatusCode(StatusCodes.Status200OK, response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Revoke(RevokeCommandRequest request)
+        {
+            await _mediator.Send(request);
+            return StatusCode(StatusCodes.Status200OK);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RevokeAll()
+        {
+           await _mediator.Send(new RevokeAllCommandRequest());
+            return StatusCode(StatusCodes.Status200OK);
         }
     }
 }
