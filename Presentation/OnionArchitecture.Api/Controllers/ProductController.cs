@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using OnionArchitecture.Application.Features.Brands.Commands.CreateBrand;
 using OnionArchitecture.Application.Features.Products.Command.CreateProduct;
 using OnionArchitecture.Application.Features.Products.Command.DeleteProduct;
 using OnionArchitecture.Application.Features.Products.Command.UpdateProduct;
@@ -48,5 +49,7 @@ namespace OnionArchitecture.Api.Controllers
             await _mediator.Send(request);
             return Ok();
         }
+
+       
     }
 }
